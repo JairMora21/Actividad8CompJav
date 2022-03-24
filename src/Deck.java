@@ -22,34 +22,22 @@ public class Deck {
         int cambiarColor = 0;
 
 
-        for (int i = 0; i< palo.length;i++){
-                for (int j = 0; j< valor.length;j++){
-
-                    iterar++;
-                    if (iterar >= 27){
-                        cambiarColor = 1;
-                    }
-                    carta =  "{"+palo[i]+"}" + "," + "{"+ color[cambiarColor] +"}" + "," + "{" + valor[j] + "}";
-                    baraja.add(carta);
+        for (int i = 0; i< palo.length;i++) {
+            for (int j = 0; j < valor.length; j++) {
+                iterar++;
+                if (iterar >= 27) {
+                    cambiarColor = 1;
                 }
+                carta = "{" + palo[i] + "}" + "," + "{" + color[cambiarColor] + "}" + "," + "{" + valor[j] + "}";
+                baraja.add(carta);
+            }
         }
-
-        /*
-        ListIterator iterator = baraja.listIterator();
-
-        while (iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
-        */
-
-
-
-
     }
 
     public void shhuffle (){
         System.out.println("Se mezclo el deck");
     }
+
     public void head(){
 
         System.out.println("Su carta es");
@@ -88,7 +76,7 @@ public class Deck {
             System.out.println(cartas);
         }
         System.out.println("Quedan " + baraja.size() + " cartas");
-    }
+     }
 
 
 

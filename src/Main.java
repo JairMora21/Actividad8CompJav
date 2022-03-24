@@ -9,10 +9,11 @@ public class Main {
         String repetir;
         do {
 
-            int opc;
+            int opc = 8;
             boolean validar = true;
-            do {
 
+
+                do{
                 System.out.println("Menu");
                 System.out.println("1. Mezclar deck");
                 System.out.println("2. Sacar una carta");
@@ -20,9 +21,13 @@ public class Main {
                 System.out.println("4. Generar una mano de 5 cartas");
                 System.out.println("5. Salir");
 
-                System.out.print("Opcion: ");
-                Scanner scanner = new Scanner(System.in);
-                opc = scanner.nextInt();
+                try {
+                    System.out.print("Opcion: ");
+                    Scanner scanner = new Scanner(System.in);
+                    opc = scanner.nextInt();
+                }catch (InputMismatchException e){
+                    System.out.println("Solo admite valores numericos");
+                }
 
                 if (opc >= 6 || opc <= 0) {
                     System.out.println("Digite un numero entre los rangos correctos");
