@@ -40,9 +40,14 @@ public class Deck {
 
     public void head(){
 
-        System.out.println("Su carta es");
-        System.out.println(baraja.getFirst());
-        baraja.removeFirst();
+        try {
+            System.out.println("Su carta es");
+            System.out.println(baraja.getFirst());
+            baraja.removeFirst();
+        } catch(Exception e){
+            System.out.println("Se acabaron las cartas, se dara por terminado el programa");
+            System.exit(0);
+        }
         System.out.println("Quedan " + baraja.size() + " cartas");
     }
 
@@ -53,23 +58,33 @@ public class Deck {
 
         aleatorio = (int) (random.nextDouble() * baraja.size());
 
-        System.out.println("Su carta es");
-        System.out.println(baraja.get(aleatorio));
-        baraja.remove(aleatorio);
+        try {
+            System.out.println("Su carta es");
+            System.out.println(baraja.get(aleatorio));
+            baraja.remove(aleatorio);
+        }catch(Exception e){
+            System.out.println("Se acabaron las cartas, se dara por terminado el programa");
+            System.exit(0);
+        }
         System.out.println("Quedan " + baraja.size() + " cartas");
 
     }
 
     public void hand (){
+
         String [] misCartas = new String[5];
         int aleatorio  = 0;
         Random random = new Random();
 
-
         for (int i = 0; i< misCartas.length; i++){
             aleatorio = (int) (random.nextDouble() * baraja.size());
-            misCartas[i] = baraja.get(aleatorio);
-            baraja.remove(aleatorio);
+            try {
+                misCartas[i] = baraja.get(aleatorio);
+                baraja.remove(aleatorio);
+            } catch (Exception e){
+                System.out.println("Se acabaron las cartas, se dara por terminado el programa");
+                System.exit(0);
+            }
         }
 
         for (String cartas: misCartas){
@@ -77,6 +92,8 @@ public class Deck {
         }
         System.out.println("Quedan " + baraja.size() + " cartas");
      }
+
+
 
 
 
